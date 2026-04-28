@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    android:padding="16dp">
+
+    <!-- Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnDone"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="Done"
+            android:backgroundTint="@color/blue"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btnUpdate"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="Update"
+            android:backgroundTint="@color/blue"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btnDelete"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="Delete"
+            android:backgroundTint="@color/red"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:text="Hello"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <!-- Meaning -->
+    <TextView
+        android:id="@+id/tvMeaning"
+        android:text="Meaning"
+        android:textStyle="bold"
+        android:layout_marginTop="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:text="Meaning example"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <!-- Synonym -->
+    <TextView
+        android:id="@+id/tvSynonym"
+        android:text="Synonym"
+        android:textStyle="bold"
+        android:layout_marginTop="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:text="example"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <!-- Details -->
+    <TextView
+        android:text="Details"
+        android:textStyle="bold"
+        android:layout_marginTop="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tvDetails"
+        android:text="Details example"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

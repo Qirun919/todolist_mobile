@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E9EBF2"
+    tools:context=".MainActivity">
+
+    <!-- Center content -->
+    <LinearLayout
+        android:id="@+id/emptyStateLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/imageEmpty"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:src="@drawable/file"
+            android:contentDescription="Empty file icon"
+            android:tint="#8D7F83" />
+
+        <TextView
+            android:id="@+id/textEmpty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="You have no word yet"
+            android:textColor="#222222"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:background="@drawable/rounded_button"
+        android:drawableStart="@drawable/baseline_add_24"
+        android:drawableTint="@color/white"
+        android:elevation="6dp"
+        android:padding="10dp"
+        android:text="Add"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="320dp"
+        tools:layout_editor_absoluteY="616dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
