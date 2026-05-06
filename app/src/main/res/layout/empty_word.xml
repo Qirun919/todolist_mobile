@@ -27,7 +27,7 @@
             android:layout_height="90dp"
             android:src="@drawable/file"
             android:contentDescription="Empty file icon"
-            android:tint="#8D7F83" />
+            app:tint="#8D7F83" />
 
         <TextView
             android:id="@+id/textEmpty"
@@ -55,6 +55,8 @@
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_editor_absoluteX="320dp"
         tools:layout_editor_absoluteY="616dp" />
 
