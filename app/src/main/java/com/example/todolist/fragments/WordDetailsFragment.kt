@@ -31,6 +31,12 @@ class WordDetailsFragment : Fragment(R.layout.word_details) {
         view.findViewById<TextView>(R.id.tvSynonym).text = synonyms
         view.findViewById<TextView>(R.id.tvDetails).text = details
 
+        // Hide Update and Done buttons if word is already completed
+        if (status == "DONE") {
+            view.findViewById<Button>(R.id.btnUpdate).visibility = View.GONE
+            view.findViewById<Button>(R.id.btnDone).visibility = View.GONE
+        }
+
         // UPDATE
         view.findViewById<Button>(R.id.btnUpdate).setOnClickListener {
             val updateFragment = AddWordFragment().apply {

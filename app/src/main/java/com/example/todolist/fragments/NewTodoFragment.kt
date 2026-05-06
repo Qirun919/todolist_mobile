@@ -25,6 +25,27 @@ class NewTodoFragment : Fragment(R.layout.new_todo_fragment) {
 
     private lateinit var dao: com.example.todolist.database.TodoDao
 
+    // filter and short function
+    private fun filterAndSort(query: String = "") {
+        val filtered = if (query.isBlank()) {
+            data
+        } else {
+            data.filter {
+                it.title.contains(query, ignoreCase = true) ||
+                        it.meaning.orEmpty().contains(query, ignoreCase = true)
+            }
+        }
+
+        val sorted = if (sortBy == "title") {
+            filtered.sortedBy { it.title.lowercase() }
+        } else {
+            filtered.sortedBy { it.title }
+        }
+
+        val finalList = if (sortOrder == "ascending") sorted else sorted.reversed()
+        updateList(finalList)
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -34,6 +55,16 @@ class NewTodoFragment : Fragment(R.layout.new_todo_fragment) {
         dao = TodoDatabase.getDatabase(requireContext()).todoDao()
 
         loadData()
+
+        // Search bar
+        val searchBar = view.findViewById<android.widget.EditText>(R.id.editTextText2)
+        searchBar.addTextChangedListener(object : android.text.TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                filterAndSort(s.toString())
+            }
+            override fun afterTextChanged(s: android.text.Editable?) {}
+        })
 
         // 监听返回栈变化 自动刷新
         requireActivity().supportFragmentManager.addOnBackStackChangedListener {
